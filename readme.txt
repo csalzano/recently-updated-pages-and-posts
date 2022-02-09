@@ -32,6 +32,7 @@ This plugin displays a list of links to recently modified items in any WordPress
 == Change Log ==
 
 = 1.0.0 = 
+* [Added] Adds a text domain and makes all strings translatable
 * [Changed] Implements semantic version numbers starting with 1.0.0
 
 = 0.120223 =
