@@ -1,6 +1,5 @@
 === Recently Updated Pages and Posts ===
 Contributors: salzano
-Donate link: http://www.tacticaltechnique.com/donate/
 Tags: recent updates, newest posts, list updated posts, list updated pages, list pages
 Requires at least: 2.8
 Tested up to: 3.3.1
