@@ -15,8 +15,13 @@ defined( 'ABSPATH' ) or exit;
 class recently_updated_widget extends WP_Widget {
 
 	function recently_updated_widget() {
-		// widget actual processes
-		parent::WP_Widget( /* Base ID */'recently_updated_widget', /* Name */'Recent updates', array( 'description' => 'Recently updated pages and posts' ) );
+		parent::WP_Widget( 
+			'recently_updated_widget', //Base ID
+			__( 'Recent Updates', 'rup-widget' ), //Name
+			array( 
+				'description' => __( 'Recently updated pages and posts', 'rup-widget' ),
+			)
+		);
 	}
 
 	function form($instance) {
@@ -28,9 +33,9 @@ class recently_updated_widget extends WP_Widget {
 		$word_count = htmlspecialchars($instance['word_count'], ENT_QUOTES);
 	?>
 		<p>
-		<label for="<?php echo $this->get_field_id('title'); ?>" style="line-height:35px;display:block;">Title: <input type="text" size="20" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" /></label>
-		<label for="<?php echo $this->get_field_id('post_count'); ?>" style="line-height:35px;display:block;">Show <input type="text" size="2" id="<?php echo $this->get_field_id('post_count'); ?>" name="<?php echo $this->get_field_name('post_count'); ?>" value="<?php echo $post_count; ?>" /> items</label>
-		<label for="<?php echo $this->get_field_id('word_count'); ?>" style="line-height:35px;display:block;">Excerpt length: <input type="text" size="2" id="<?php echo $this->get_field_id('word_count'); ?>" name="<?php echo $this->get_field_name('word_count'); ?>" value="<?php echo $word_count; ?>" /> words</label>
+		<label for="<?php echo $this->get_field_id('title'); ?>" style="line-height:35px;display:block;"><?php _e( 'Title:', 'rup-widget' ); ?> <input type="text" size="20" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" /></label>
+		<label for="<?php echo $this->get_field_id('post_count'); ?>" style="line-height:35px;display:block;"><?php _e( 'Show', 'rup-widget' ); ?> <input type="text" size="2" id="<?php echo $this->get_field_id('post_count'); ?>" name="<?php echo $this->get_field_name('post_count'); ?>" value="<?php echo $post_count; ?>" /> items</label>
+		<label for="<?php echo $this->get_field_id('word_count'); ?>" style="line-height:35px;display:block;"><?php _e( 'Excerpt length:', 'rup-widget' ); ?> <input type="text" size="2" id="<?php echo $this->get_field_id('word_count'); ?>" name="<?php echo $this->get_field_name('word_count'); ?>" value="<?php echo $word_count; ?>" /> words</label>
 		</p>
 	<?php
 	}
