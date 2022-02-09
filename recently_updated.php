@@ -1,15 +1,16 @@
 <?php
-/*
-Plugin Name: Recently updated pages and posts
-Plugin URI: http://www.tacticaltechnique.com/wordpress/wordpress-recently-updated-pages-or-posts/
-Description: Creates a sidebar widget that displays a list of links to recently updated pages and posts.
-Author: Corey Salzano
-Version: 0.120223
-Author URI: http://www.tacticaltechnique.com/
+defined( 'ABSPATH' ) or exit;
+
+/**
+ * Plugin Name: Recently Updated Pages and Posts
+ * Plugin URI: https://github.com/csalzano/recently-updated-pages-and-posts
+ * Description: Creates a sidebar widget that displays a list of links to recently updated pages and posts.
+ * Author: Corey Salzano
+ * Author URI: https://breakfastco.xyz/
+ * Version: 1.0.0
+ * Text-domain: rup-widget
+ * License: GPLv2
 */
-
-//	please send your code changes upstream to me
-
 
 class recently_updated_widget extends WP_Widget {
 
