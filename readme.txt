@@ -1,4 +1,4 @@
-=== Recently updated pages and posts ===
+=== Recently Updated Pages and Posts ===
 Contributors: salzano
 Donate link: http://www.tacticaltechnique.com/donate/
 Tags: recent updates, newest posts, list updated posts, list updated pages, list pages
