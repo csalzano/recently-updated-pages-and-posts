@@ -2,8 +2,8 @@
 Contributors: salzano
 Tags: recent updates, newest posts, list updated posts, list updated pages, list pages
 Requires at least: 2.8
-Tested up to: 3.3.1
-Stable tag: 0.120223
+Tested up to: 5.9.0
+Stable tag: 1.0.0
 
 Creates a sidebar widget that lists recently updated pages and posts including newly published items.
 
@@ -30,6 +30,9 @@ This plugin displays a list of links to recently modified items in any WordPress
 1. Sample output
 
 == Change Log ==
+
+= 1.0.0 = 
+* [Changed] Implements semantic version numbers starting with 1.0.0
 
 = 0.120223 =
 * Shrunk the code by introducing wp_trim_words instead of my own function 
