@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) or exit;
 
 class recently_updated_widget extends WP_Widget {
 
-	function recently_updated_widget() {
+	function __construct() {
 		parent::WP_Widget( 
 			'recently_updated_widget', //Base ID
 			__( 'Recent Updates', 'recently-updated-pp' ), //Name
