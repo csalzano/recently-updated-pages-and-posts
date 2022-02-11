@@ -5,7 +5,7 @@ Requires at least: 2.8
 Tested up to: 5.9.0
 Stable tag: 1.0.0
 
-Creates a sidebar widget that lists recently updated pages and posts including newly published items.
+Provides a sidebar widget "Recent Updates" that lists recently updated pages and posts including newly published items.
 
 == Description ==
 
@@ -23,7 +23,7 @@ This plugin displays a list of links to recently modified items in any WordPress
 == Frequently Asked Questions ==
 
 = Need help? Have a suggestion? =
-[Visit this plugin's home page](http://www.tacticaltechnique.com/wordpress/wordpress-recently-updated-pages-or-posts/)
+[Visit this plugin's home page](https://github.com/csalzano/recently-updated-pages-and-posts)
 
 == Screenshots ==
 
@@ -33,7 +33,9 @@ This plugin displays a list of links to recently modified items in any WordPress
 
 = 1.0.0 = 
 * [Added] Adds a text domain and makes all strings translatable
+* [Fixed] Now specifies post types of `post` or `page` when querying posts
 * [Changed] Implements semantic version numbers starting with 1.0.0
+* [Changed] Changes tested up to version number to 5.9.0
 
 = 0.120223 =
 * Shrunk the code by introducing wp_trim_words instead of my own function 
@@ -54,6 +56,9 @@ This plugin displays a list of links to recently modified items in any WordPress
 * First build
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+Changes tested up to version number to 5.9.0. Implements semantic version numbers starting with 1.0.0. Now specifies post types of `post` or `page` when querying posts. Adds a text domain and makes all strings translatable.
 
 = 0.120223 = 
 This plugin now works better on less code. I was able to use a built in WP function I never knew of, wp_trim_words.
