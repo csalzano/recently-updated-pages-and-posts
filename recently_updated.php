@@ -56,10 +56,19 @@ class recently_updated_widget extends WP_Widget {
 		$title = empty($instance['title']) ? '&nbsp;' : apply_filters('widget_title', $instance['title']);
 		$post_count = $instance['post_count'];
 		$word_count = $instance['word_count'];
-		$today = current_time('mysql', 1);
-		global $wpdb;
 
-		if ( $recentposts = $wpdb->get_results("SELECT ID, post_title, post_date, post_content FROM $wpdb->posts WHERE post_status = 'publish' AND post_modified_gmt < '$today' ORDER BY post_modified_gmt DESC LIMIT $post_count")){
+		$recent_post_args = array(
+			array(
+				'post_status'    => 'publish',
+				'post_type'      => apply_filters( 'recently_updated_pp_post_types', array( 'post', 'page' ) ),
+				'posts_per_page' => $post_count,
+				'order'          => 'DESC',
+				'orderby'        => 'post_modified',
+			),
+		);
+
+		if ( $recentposts = get_posts( $recent_post_args ) )
+		{
 			echo $before_widget;
 			if ( !empty( $title ) ) { echo $before_title . $title . $after_title; };
 	?>
