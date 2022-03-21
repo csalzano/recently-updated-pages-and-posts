@@ -7,7 +7,7 @@ defined( 'ABSPATH' ) or exit;
  * Description: Creates a sidebar widget that displays a list of links to recently updated pages and posts.
  * Author: Corey Salzano
  * Author URI: https://breakfastco.xyz/
- * Version: 1.0.0
+ * Version: 1.0.1
  * Text-domain: recently-updated-pp
  * License: GPLv2
 */

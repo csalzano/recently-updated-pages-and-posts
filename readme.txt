@@ -2,10 +2,10 @@
 Contributors: salzano
 Tags: recent updates, newest posts, list updated posts, list updated pages, list pages
 Requires at least: 2.8
-Tested up to: 5.9.0
-Stable tag: 1.0.0
+Tested up to: 5.9.2
+Stable tag: 1.0.1
 
-Provides a sidebar widget "Recent Updates" that lists recently updated pages and posts including newly published items.
+Creates a sidebar widget that lists recently updated pages and posts including newly published items.
 
 == Description ==
 
@@ -23,13 +23,17 @@ This plugin displays a list of links to recently modified items in any WordPress
 == Frequently Asked Questions ==
 
 = Need help? Have a suggestion? =
-[Visit this plugin's home page](https://github.com/csalzano/recently-updated-pages-and-posts)
+[Visit this plugin's home page](http://www.tacticaltechnique.com/wordpress/wordpress-recently-updated-pages-or-posts/)
 
 == Screenshots ==
 
 1. Sample output
 
 == Change Log ==
+
+= 1.0.1 =
+* [Fixed] Stop calling a named constructor in the WP_Widget parent class, use __construct() instead
+* [Changed] Bumps tested up to version number to 5.9.2
 
 = 1.0.0 = 
 * [Added] Adds a text domain and makes all strings translatable
