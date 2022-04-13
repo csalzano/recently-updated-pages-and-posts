@@ -7,12 +7,12 @@ defined( 'ABSPATH' ) or exit;
  * Description: Creates a sidebar widget that displays a list of links to recently updated pages and posts.
  * Author: Corey Salzano
  * Author URI: https://breakfastco.xyz/
- * Version: 1.0.1
+ * Version: 1.0.2
  * Text-domain: recently-updated-pp
  * License: GPLv2
 */
 
-class recently_updated_widget extends WP_Widget {
+class recently_updated_widget extends WP_Widget{
 
 	function __construct() {
 		parent::__construct( 
@@ -24,13 +24,23 @@ class recently_updated_widget extends WP_Widget {
 		);
 	}
 
+	protected function default_post_count()
+	{
+		return (int) apply_filters( 'recently_updated_pp_post_count', 5 );
+	}
+
+	protected function default_word_count()
+	{
+		return (int) apply_filters( 'excerpt_length', 55 );
+	}
+
 	function form($instance) {
 		// outputs the options form on admin
 
 		// format options as valid html
-		$title = htmlspecialchars($instance['title'], ENT_QUOTES);
-		$post_count = htmlspecialchars($instance['post_count'], ENT_QUOTES);
-		$word_count = htmlspecialchars($instance['word_count'], ENT_QUOTES);
+		$title = htmlspecialchars($instance['title'] ?? '', ENT_QUOTES);
+		$post_count = htmlspecialchars($instance['post_count'] ?? $this->default_post_count(), ENT_QUOTES);
+		$word_count = htmlspecialchars($instance['word_count'] ?? $this->default_word_count(), ENT_QUOTES);
 	?>
 		<p>
 		<label for="<?php echo $this->get_field_id('title'); ?>" style="line-height:35px;display:block;"><?php _e( 'Title:', 'recently-updated-pp' ); ?> <input type="text" size="20" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" /></label>
@@ -54,17 +64,15 @@ class recently_updated_widget extends WP_Widget {
 		extract($args, EXTR_SKIP);
 
 		$title = empty($instance['title']) ? '&nbsp;' : apply_filters('widget_title', $instance['title']);
-		$post_count = $instance['post_count'];
-		$word_count = $instance['word_count'];
+		$post_count = $instance['post_count'] ?? $this->default_post_count();
+		$word_count = $instance['word_count'] ?? $this->default_word_count();
 
 		$recent_post_args = array(
-			array(
-				'post_status'    => 'publish',
-				'post_type'      => apply_filters( 'recently_updated_pp_post_types', array( 'post', 'page' ) ),
-				'posts_per_page' => $post_count,
-				'order'          => 'DESC',
-				'orderby'        => 'post_modified',
-			),
+			'post_status'    => 'publish',
+			'post_type'      => apply_filters( 'recently_updated_pp_post_types', array( 'post', 'page' ) ),
+			'posts_per_page' => $post_count,
+			'order'          => 'DESC',
+			'orderby'        => 'post_modified',
 		);
 
 		if ( $recentposts = get_posts( $recent_post_args ) )

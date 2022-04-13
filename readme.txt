@@ -2,8 +2,8 @@
 Contributors: salzano
 Tags: recent updates, newest posts, list updated posts, list updated pages, list pages
 Requires at least: 2.8
-Tested up to: 5.9.2
-Stable tag: 1.0.1
+Tested up to: 5.9.3
+Stable tag: 1.0.2
 
 Creates a sidebar widget that lists recently updated pages and posts including newly published items.
 
@@ -30,6 +30,11 @@ This plugin displays a list of links to recently modified items in any WordPress
 1. Sample output
 
 == Change Log ==
+
+= 1.0.2 =
+* [Fixed] Provides default values for post count and word count settings. Avoids producing warnings when the widget is used without these setting values.
+* [Fixed] Fixes the post query arguments array such that pages are not excluded from the request.
+* [Changed] Bumps tested up to version number to 5.9.3.
 
 = 1.0.1 =
 * [Fixed] Stop calling a named constructor in the WP_Widget parent class, use __construct() instead
@@ -60,6 +65,9 @@ This plugin displays a list of links to recently modified items in any WordPress
 * First build
 
 == Upgrade Notice ==
+
+= 1.0.2 = 
+Provides default values for post count and word count settings. Avoids producing warnings when the widget is used without these setting values. Fixes the post query arguments array such that pages are not excluded from the request. Bumps tested up to version number to 5.9.3.
 
 = 1.0.0 =
 Changes tested up to version number to 5.9.0. Implements semantic version numbers starting with 1.0.0. Now specifies post types of `post` or `page` when querying posts. Adds a text domain and makes all strings translatable.
